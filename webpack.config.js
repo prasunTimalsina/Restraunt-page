@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { sources } = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -9,6 +10,10 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+  },
+  devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/template.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -22,12 +27,15 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.html$/i,
+        test: /\.html$/,
         loader: "html-loader",
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: "asset/resource", // Use asset/resource for images
+        generator: {
+          filename: "imgs/[name].[contenthash][ext]", // Place images in 'imgs' folder
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
