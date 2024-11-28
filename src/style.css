@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "oP";
+  src: url(./fonts/one\ piece\ font.ttf) format(ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +19,7 @@
 }
 
 body {
-  font-family: "Roboto";
+  font-family: "oP";
 }
 
 header {
@@ -20,14 +27,16 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 10rem;
-  padding: 0 3rem 3rem 3rem;
+  padding: 0 3rem 0 3rem;
+  height: 15vh;
 }
 
 /* styling the header */
 .logo-pic {
   display: inline-block;
-  height: 9rem;
-  width: 9rem;
+  height: 7rem;
+  width: 7rem;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -52,22 +61,98 @@ header {
 .nav-link:hover {
   color: #03045e;
   background-color: #caf0f8;
+  transform: translateY(-3px);
 }
 
 .header-ctc-btn {
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 500;
   color: #01306d;
+  width: 8rem;
   height: 3rem;
-  width: 7rem;
   border: 2px solid #023e8a;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .header-ctc-btn:hover {
   color: #caf0f8;
   background-color: #03045e;
   border: #03045e;
+  transform: translateY(-3px);
+}
+
+/* home page */
+.home {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  border-radius: 20px;
+  width: 45rem;
+  height: 30rem;
+  box-shadow: 0px 10px 20px -11px rgba(0, 0, 0, 0.5);
+}
+.title {
+  color: #03045e;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-heading {
+  font-size: 2.6rem;
+}
+
+.hero-btns {
+  margin-top: 3em;
+  display: flex;
+  gap: 5em;
+}
+
+.hero-btn {
+  width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+  border: 2px solid #023e8a;
+  box-shadow: 0px 10px 20px -11px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-ctc {
+  color: #caf0f8;
+  background-color: #03045e;
+}
+
+.hero-ctc:hover {
+  color: #03045e;
+  background-color: white;
+  border: 2px solid #023e8a;
+
+  transform: translateY(-3px);
+}
+
+.explore-btn {
+}
+
+.explore-btn:hover {
+  color: #caf0f8;
+  background-color: #03045e;
+
+  transform: translateY(-3px);
 }
